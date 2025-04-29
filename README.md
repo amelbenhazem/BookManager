@@ -2,63 +2,62 @@
 
 ## Description
 
-**BookManager** est une application de gestion de livres permettant aux utilisateurs de rechercher, ajouter, modifier et supprimer des livres. Les utilisateurs peuvent également demander l'accès à des livres, les évaluer avec des étoiles (1-5) et ajouter des commentaires. L'application propose un tableau de bord pour les administrateurs afin de gérer les demandes d'accès et effectuer des opérations CRUD sur les livres.
+**BookManager** est une application de gestion de livres permettant aux utilisateurs de :
 
-### Fonctionnalités principales :
+- Rechercher, ajouter, modifier et supprimer des livres
+- Demander l'accès à des livres
+- Évaluer les livres (1 à 5 étoiles)
+- Ajouter des commentaires sur les livres
+- Accéder à un tableau de bord d'administration pour la gestion des demandes et des livres
 
-- **Système de notation par étoiles** (1-5 étoiles)
-- **Commentaires/reviews sur les livres** pour les utilisateurs ayant un accès approuvé
-- **Demandes d'accès aux livres** avec des badges de statut (en attente, approuvé, rejeté)
-- **Gestion des demandes par les administrateurs** (approuver/rejeter les demandes)
-- **CRUD des livres pour les administrateurs**
-- **Gestion des utilisateurs** avec rôles (administrateur/lecteur)
-- **Système de filtrage et de recherche** des livres par titre, auteur, catégorie, etc.
-- **Interface réactive** et adaptée à tous les appareils
+### Fonctionnalités principales
+
+-  **Notation par étoiles** (1 à 5)
+-  **Commentaires** pour les utilisateurs ayant un accès approuvé
+-  **Demandes d'accès** avec badge de statut (en attente, approuvé, rejeté)
+-  **Dashboard admin** pour approuver/rejeter les demandes
+-  **CRUD des livres** pour les administrateurs
+-  **Gestion des rôles utilisateurs** (lecteur / administrateur)
+-  **Filtrage et recherche** par titre, auteur, catégorie, etc.
+-  **Interface responsive** compatible avec tous les appareils
+
+---
 
 ## Technologies utilisées
 
 - **Frontend** : Angular 15
-- **Gestion de l'état** : Services Angular, localStorage pour la persistance des données
-- **CSS** : Utilisation de styles globaux et responsive design
-- **Routing** : Routes protégées avec des gardes d'authentification
-- **Formulaires** : Formulaires réactifs et basés sur des templates pour les fonctionnalités de demande et d'ajout de livres
-- **Notifications** : Alertes et notifications visuelles lors des actions de l'utilisateur
+- **Gestion d’état** : Services Angular, `localStorage` pour la persistance
+- **CSS** : Styles globaux + responsive design
+- **Routing** : Routes protégées avec guards d'authentification
+- **Formulaires** : Réactifs et basés sur des templates
+- **Notifications** : Alertes visuelles pour retour utilisateur
 
-## Installation
+---
+
+##  Installation
 
 ### Prérequis
 
-- Node.js et npm (version 16 ou supérieure)
+- Node.js v16+  
 - Angular CLI
 
 ### Étapes d'installation
 
-1. **Clonez le dépôt** :
-    ```bash
-    git clone https://github.com/amelbenhazem/BookManager.git
-    ```
+1. Installer Angular CLI :
 
-2. **Accédez au dossier du projet** :
-    ```bash
-    cd book-manager
-    ```
+   npm install -g @angular/cli
+ 
+2.Cloner le projet et ouvrir dans VS Code
 
-3. **Installez les dépendances** :
-    ```bash
+3.Installer les dépendances :
     npm install
-    ```
 
-4. **Lancez le serveur de développement** :
-    ```bash
-    npm start
-    ```
-
-5. **Accédez à l'application dans votre navigateur** :
-    Ouvrez votre navigateur et allez à `http://localhost:4200`.
-
-## Structure du projet
-
-Voici la structure du projet Angular :
+4.Lancer le serveur Angular :
+    ng serve
+5.Ouvrir le navigateur sur :
+    http://localhost:4200
+    
+##  Structure du projet
 
 book-manager/
 ├── src/
@@ -92,49 +91,56 @@ book-manager/
 └── README.md
 
 
-## Fonctionnalités détaillées
+##  Fonctionnalités détaillées
+1. Gestion des utilisateurs (Admin / Lecteur)
+    Inscription via la page Registration
 
-### 1. **Gestion des utilisateurs (administrateur/lecteur)**
+    Demande d’accès aux livres (lecteurs)
 
-- Les utilisateurs peuvent s'inscrire via la page de **Registration**.
-- Les lecteurs peuvent demander l'accès à des livres via le bouton **Request Access**.
-- Les administrateurs peuvent approuver ou rejeter les demandes via le **Dashboard Admin**.
+    Gestion des demandes via le Dashboard Admin
 
-### 2. **Système de notation et commentaires**
+2. Notation et Commentaires
+    Notation de 1 à 5 étoiles après obtention de l'accès
 
-- Les utilisateurs peuvent attribuer une note de 1 à 5 étoiles après avoir obtenu l'accès à un livre.
-- Les utilisateurs peuvent laisser des commentaires pour chaque livre qu'ils ont évalué.
+    Ajout de commentaires sur les livres évalués
 
-### 3. **Recherche et filtrage des livres**
+3. Recherche et filtres
+    Recherche par titre, auteur, ou catégorie
 
-- Les utilisateurs peuvent rechercher des livres par titre, auteur et catégorie.
-- Les administrateurs peuvent ajouter, modifier ou supprimer des livres.
+    CRUD complet pour les livres (admin uniquement)
 
-### 4. **Interface et design responsive**
+4. Interface responsive
+    Affichage en cartes adaptables (mobile, tablette, desktop)
 
-- Le design est responsive, avec une mise en page par cartes qui s'adapte aux différentes tailles d'écran (mobile, tablette, desktop).
-- L'interface est fluide, avec des animations subtiles pour les actions de l'utilisateur.
+    Expérience utilisateur fluide et animée
 
-## Exemple de Workflows
+## Exemples de workflows
+ ** Lecteur
+S'inscrire
 
-1. **Workflow d'un lecteur :**
-   - S'inscrire
-   - Rechercher un livre
-   - Demander l'accès
-   - Attendre l'approbation
-   - Après approbation, noter et commenter le livre
+Rechercher un livre
 
-2. **Workflow d'un administrateur :**
-   - Se connecter via l'email et mot de passe admin
-   - Accéder au **Dashboard Admin**
-   - Voir et gérer les demandes des lecteurs
-   - Approuver ou rejeter les demandes
-   - Gérer les livres (CRUD)
+Demander l’accès
 
-## Compte administrateur
+Attendre l’approbation
 
-- **Email** : admin@example.com
-- **Mot de passe** : admin123
+Noter et commenter le livre
 
-Les administrateurs peuvent se connecter à l'application avec ces identifiants pour tester les fonctionnalités d'administration.
+  **Administrateur
+  
+Se connecter avec un compte admin
+
+Accéder au Dashboard Admin
+
+Gérer les demandes des lecteurs
+
+Gérer les livres (ajout, modification, suppression)
+
+ ## Compte administrateur de test
+Email : admin@example.com
+
+Mot de passe : admin123
+
+Utilisez ces identifiants pour tester les fonctionnalités administrateur.
+
 

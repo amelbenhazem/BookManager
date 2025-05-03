@@ -1,0 +1,82 @@
+{
+  "hash": "aa91ac10",
+  "configHash": "dca3e16c",
+  "lockfileHash": "4e6ff679",
+  "browserHash": "6490f724",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "bbfcf2f8",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "c99a4e8f",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "d567214b",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "eac79352",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "edaa9df2",
+      "needsInterop": false
+    },
+    "@fullcalendar/angular": {
+      "src": "../../../../../../node_modules/@fullcalendar/angular/fesm2020/fullcalendar-angular.mjs",
+      "file": "@fullcalendar_angular.js",
+      "fileHash": "3b1b5895",
+      "needsInterop": false
+    },
+    "@fullcalendar/daygrid": {
+      "src": "../../../../../../node_modules/@fullcalendar/daygrid/index.js",
+      "file": "@fullcalendar_daygrid.js",
+      "fileHash": "2da460ee",
+      "needsInterop": false
+    },
+    "@fullcalendar/core": {
+      "src": "../../../../../../node_modules/@fullcalendar/core/index.js",
+      "file": "@fullcalendar_core.js",
+      "fileHash": "983b799c",
+      "needsInterop": false
+    },
+    "@fullcalendar/interaction": {
+      "src": "../../../../../../node_modules/@fullcalendar/interaction/index.js",
+      "file": "@fullcalendar_interaction.js",
+      "fileHash": "61d75d11",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-ULJGACYD": {
+      "file": "chunk-ULJGACYD.js"
+    },
+    "chunk-TIXO3RVG": {
+      "file": "chunk-TIXO3RVG.js"
+    },
+    "chunk-3SYN5324": {
+      "file": "chunk-3SYN5324.js"
+    },
+    "chunk-W47OEBIB": {
+      "file": "chunk-W47OEBIB.js"
+    },
+    "chunk-ETKCSIIP": {
+      "file": "chunk-ETKCSIIP.js"
+    },
+    "chunk-WDMUDEB6": {
+      "file": "chunk-WDMUDEB6.js"
+    }
+  }
+}

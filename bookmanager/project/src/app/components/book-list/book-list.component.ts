@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import { BookService } from '../../services/book.service';
 import { AuthService } from '../../services/auth.service';
 import { BookRequestService } from '../../services/book-request.service';
@@ -10,11 +11,13 @@ import { Book } from '../../models/book.model';
 import { BookRequest } from '../../models/user.model';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { BookCardComponent } from '../book-card/book-card.component';
+import { ConfirmationDialogComponent } from '../dialogBox/dialogBox.component';
+
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, SearchBarComponent, BookCardComponent],
+  imports: [CommonModule, FormsModule, RouterLink, SearchBarComponent, BookCardComponent, ConfirmationDialogComponent],
   template: `
     <div class="book-list-container">
       <div class="header">
@@ -149,7 +152,8 @@ export class BookListComponent {
   private authService = inject(AuthService);
   private bookRequestService = inject(BookRequestService);
   private reviewService = inject(ReviewService);
-  
+  private dialog = inject(MatDialog);
+
   books = this.bookService.getBooks();
   filteredBooks = signal<Book[]>(this.books());
   
@@ -166,7 +170,6 @@ export class BookListComponent {
   }
 
   onEditBook(book: Book): void {
-    // Navigation will be handled by the router link in the book-card component
   }
 
   onDeleteBook(id: number): void {
@@ -180,7 +183,15 @@ export class BookListComponent {
     const user = this.authService.getUser();
     if (user()) {
       this.bookRequestService.createRequest(user()!.id, bookId);
-      alert('Access request submitted successfully!');
+      
+      this.dialog.open(ConfirmationDialogComponent, {
+        width: '450px',
+        data: {
+          title: 'Success',
+          message: 'Access request submitted successfully!',
+          confirmText: 'Close'
+        }
+      });
     }
   }
 
@@ -193,7 +204,14 @@ export class BookListComponent {
         event.rating,
         event.comment
       );
-      alert('Review submitted successfully!');
+      this.dialog.open(ConfirmationDialogComponent, {
+        width: '450px',
+        data: {
+          title: 'Success',
+          message: 'Review submitted successfully!!',
+          confirmText: 'Close'
+        }
+      });
     }
   }
 
